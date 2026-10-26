@@ -143,5 +143,14 @@ function reset(){step=0;selectedMenu=null;selectedToppings=[];cart=[];speak('처
 document.getElementById('repeatBtn').onclick=()=>speak(lastSpoken);
 render();setTimeout(()=>speak(lastSpoken),500);
 </script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js")
+      .catch(console.error);
+  });
+}
+</script>
+
 </body>
 </html>
